@@ -1,0 +1,71 @@
+.PropertyCard {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  border: 1px solid #DFDFE1;
+  border-radius: 4px;
+  margin: 1rem;
+  box-shadow: 0 3px 3px -3px rgba(0, 0, 0, .3);
+
+  .ImageAndPrice {
+    background: #F4F4F5;
+
+    .image {
+      width: 300px;
+      height: 200px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    .price {
+      font-size: 1.5rem;
+      padding: 1rem;
+    }
+  }
+
+  .PropertyDetails {
+    h1 {
+      color: #006653;
+    }
+
+    h1, p {
+      margin: 0;
+      padding: 1rem 1rem 0 1rem;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .propertyTitle {
+      font-size: 1rem;
+    }
+
+    .summary {
+      height: 92px;
+      max-height: 92px;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+    }
+
+    .agentInfo {
+      padding: 21px 1rem;
+      position: relative;
+
+      span {
+        position: absolute;
+        font-size: 2.5rem;
+        top: 6px;
+        left: 1rem;
+        text-shadow: 0 0 0 #262637;
+      }
+
+      a {
+        color: #006653;
+        margin-left: 3.5rem;
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,79 @@
+{
+	"info": {
+		"_postman_id": "76ba16d4-87c1-4673-87ff-29ab016b42d1",
+		"name": "FED Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "all properties",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/properties",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"properties"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "properties with query",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/properties?minPrice=600000&maxPrice=800000&propertyTypes=terraced,semi-detached&minBeds=2&maxBeds=4&sortBy=price&orderBy=asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"properties"
+					],
+					"query": [
+						{
+							"key": "minPrice",
+							"value": "600000"
+						},
+						{
+							"key": "maxPrice",
+							"value": "800000"
+						},
+						{
+							"key": "propertyTypes",
+							"value": "terraced,semi-detached"
+						},
+						{
+							"key": "minBeds",
+							"value": "2"
+						},
+						{
+							"key": "maxBeds",
+							"value": "4"
+						},
+						{
+							"key": "sortBy",
+							"value": "price"
+						},
+						{
+							"key": "orderBy",
+							"value": "asc"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
