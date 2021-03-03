@@ -9,8 +9,8 @@ const filterOperators = {
 };
 
 const sortComparators = {
-    price: (orderBy = 'asc') => (property1, property2) => orderBy === 'asc' ? property1.price > property2.price : property1.price < property2.price,
-    bedrooms: (orderBy = 'asc') => (property1, property2) => orderBy === 'asc' ? property1.bedrooms > property2.bedrooms : property1.bedrooms < property2.bedrooms,
+    price: (orderBy = 'asc') => (property1, property2) => orderBy === 'asc' ? property1.price - property2.price : property2.price - property1.price,
+    bedrooms: (orderBy = 'asc') => (property1, property2) => orderBy === 'asc' ? property1.bedrooms - property2.bedrooms : property2.bedrooms - property1.bedrooms,
 };
 
 const getAllProperties = async () => {
