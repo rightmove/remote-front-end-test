@@ -1,16 +1,21 @@
 import React from 'react';
-import {shallow} from 'enzyme';
+import { render, screen } from '@testing-library/react';
 import PropertyListing from '../PropertyListing';
+import PropertyCard from '../../PropertyCard';
 
 describe('PropertyListing', () => {
+  test('prop[erty list render without crashing', () => {
+    render(<PropertyListing />);
+  });
 
-    it('should render without crashing', () => {
-        const wrapper = shallow(<PropertyListing/>);
-        expect(wrapper.find('.PropertyListing')).toHaveLength(1);
-    });
+  test('initial Loading', () => {
+    render(<PropertyListing />);
+    const loading = screen.getByText(/Loading.../i);
+    expect(loading).toBeInTheDocument();
+  });
 
-    it('should render five property cards', () => {
-        const wrapper = shallow(<PropertyListing/>);
-        expect(wrapper.find('PropertyCard')).toHaveLength(5);
-    });
+  test('Property Card renderred', async () => {
+    render(<PropertyListing />);
+    await render(<PropertyCard />);
+  });
 });
