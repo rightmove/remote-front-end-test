@@ -1,30 +1,23 @@
 import React from 'react';
 import PropertyCard from '../PropertyCard';
 import './PropertyListing.scss';
+import useProperties from '../../hooks/useProperties';
 
-const DUMMY_PROPERTY = {
-    id: 73864112,
-    bedrooms: 3,
-    summary: 'Property 1 Situated moments from the River Thames in Old Chelsea...',
-    displayAddress: '1 CHEYNE WALK, CHELSEA, SW3',
-    propertyType: 'Flat',
-    price: 1950000,
-    branchName: 'M2 Property, London',
-    propertyUrl: '/property-for-sale/property-73864112.html',
-    contactUrl: '/property-for-sale/contactBranch.html?propertyId=73864112',
-    propertyTitle: '3 bedroom flat for sale',
-    mainImage: 'https://media.rightmove.co.uk/dir/crop/10:9-16:9/38k/37655/53588679/37655_CAM170036_IMG_01_0000_max_476x317.jpg'
-};
+const PropertyListing = ({ params }) => {
+  const { properties, error, loading } = useProperties(params);
 
-const PropertyListing = () => {
-    return (
-        <div className="PropertyListing">
-            {
-                Array(5).fill(DUMMY_PROPERTY)
-                    .map((property, index) => <PropertyCard key={index} {...property}/>)
-            }
-        </div>
-    )
+  return (
+    <div className="PropertyListing">
+      {error && <h3>{error}</h3>}
+      {loading && <h3>Loading...</h3>}
+
+      {!error &&
+        !loading &&
+        properties.map((property, index) => (
+          <PropertyCard key={index} {...property} />
+        ))}
+    </div>
+  );
 };
 
 export default PropertyListing;
