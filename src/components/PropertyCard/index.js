@@ -1,1 +1,1 @@
-export {default} from './PropertyCard';
+export { default } from './PropertyCard';
