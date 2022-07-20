@@ -1,15 +1,13 @@
 import React from "react";
-import { shallow } from "enzyme";
+import { render, screen } from "@testing-library/react";
+import { within } from "@testing-library/dom";
 import PropertyListing from "../PropertyListing";
 
 describe("PropertyListing", () => {
-  it("should render without crashing", () => {
-    const wrapper = shallow(<PropertyListing />);
-    expect(wrapper.find(".PropertyListing")).toHaveLength(1);
-  });
-
   it("should render five property cards", () => {
-    const wrapper = shallow(<PropertyListing />);
-    expect(wrapper.find("PropertyCard")).toHaveLength(5);
+    render(<PropertyListing />);
+    const propertiesList = screen.getByRole("list");
+    const propertyCards = within(propertiesList).getAllByRole("listitem");
+    expect(propertyCards).toHaveLength(5);
   });
 });
