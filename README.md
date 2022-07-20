@@ -1,12 +1,14 @@
-FED Test
-========
+# FED Test
 
 ## Instructions
 
 Install required dependencies by running `npm ci`. Then start the project by running `npm start`.
-The start script will start both the api server and the react app (in the development mode) in parallel. 
+The start script will start both the api server and the react app (in the development mode) in parallel.
 `npm test` launches the test runner in the interactive watch mode.
 
+## Frontend
+
+The frontend is accessible at http://localhost:5173/.
 
 ## API
 
@@ -39,10 +41,10 @@ Returns all properties as a list, which looks like:
 
 #### Filter and sort the result set
 
-In order to filter and sort the result, please the supply relevant query parameters. (e.g. `http://localhost:3000/api/properties?maxPrice=800000`)   
+In order to filter and sort the result, please the supply relevant query parameters. (e.g. `http://localhost:3000/api/properties?maxPrice=800000`)
 
 | parameter     | description                                                                                                                                                 |
-|---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | propertyTypes | Comma separated list of property types to include in your result set<br/> (e.g. detached, semi-detached, terraced, flat, apartment, maisonette, mews, boat) |
 | minPrice      | The minimum property price <br/> (e.g. 400000)                                                                                                              |
 | maxPrice      | The maximum property price <br/> (e.g. 700000)                                                                                                              |
