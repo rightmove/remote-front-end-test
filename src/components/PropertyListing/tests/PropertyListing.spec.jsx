@@ -4,10 +4,10 @@ import { within } from '@testing-library/dom';
 import PropertyListing from '../PropertyListing';
 
 describe('PropertyListing', () => {
-    it('should render five property cards', () => {
+    it('should render five property cards', async () => {
         render(<PropertyListing />);
         const propertiesList = screen.getByRole('list');
-        const propertyCards = within(propertiesList).getAllByRole('listitem');
+        const propertyCards = await within(propertiesList).findAllByRole('listitem');
         expect(propertyCards).toHaveLength(5);
     });
 });
