@@ -1,3 +1,4 @@
+/* eslint-disable no-prototype-builtins */
 const propertiesData = require('../data/properties');
 
 const filterOperators = {
