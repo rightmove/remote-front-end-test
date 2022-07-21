@@ -1,7 +1,7 @@
 const express = require('express');
 const propertiesController = require('../controllers/properties');
 
-const router  = express.Router();
+const router = express.Router();
 
 router.use('/api/properties', propertiesController);
 
