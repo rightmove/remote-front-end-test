@@ -1,1 +1,1 @@
-export {default} from './PropertyListing';
+export { default } from './PropertyListing';
