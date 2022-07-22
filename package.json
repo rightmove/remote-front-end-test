@@ -36,7 +36,7 @@
         "start": "run-p server dev:vite",
         "server": "nodemon ./server/index.js",
         "dev:vite": "vite",
-        "test": "jest --watch",
+        "test": "jest --watchAll",
         "lint": "eslint ."
     }
 }
