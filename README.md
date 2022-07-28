@@ -6,6 +6,10 @@ Install required dependencies by running `npm ci`. Then start the project by run
 The start script will start both the api server and the react app (in the development mode) in parallel.
 `npm test` launches the test runner in the interactive watch mode.
 
+## Frontend
+
+The frontend is accessible at http://localhost:5173/.
+
 ## API
 
 The api is accessible at `http://localhost:3000/api` and provides the following endpoints.
