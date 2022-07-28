@@ -2,6 +2,8 @@
 
 ## Instructions
 
+This test requires Node.js version v14.18 or higher to be installed.
+
 Install required dependencies by running `npm ci`. Then start the project by running `npm start`.
 The start script will start both the api server and the react app (in the development mode) in parallel.
 `npm test` launches the test runner in the interactive watch mode.
