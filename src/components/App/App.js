@@ -7,10 +7,10 @@ import PropertyListing from '../PropertyListing';
 const App = () => {
     return (
         <div className="App">
-            <Header/>
+            <Header />
             <main>
-                <SortAndFilter/>
-                <PropertyListing/>
+                <SortAndFilter />
+                <PropertyListing />
             </main>
         </div>
     );
