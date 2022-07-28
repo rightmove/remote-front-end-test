@@ -19,13 +19,15 @@ const DUMMY_PROPERTY = {
 
 const PropertyListing = () => {
     return (
-        <div className="PropertyListing">
+        <ul className="PropertyListing">
             {Array(5)
                 .fill(DUMMY_PROPERTY)
                 .map((property, index) => (
-                    <PropertyCard key={index} {...property} />
+                    <li key={index}>
+                        <PropertyCard {...property} />
+                    </li>
                 ))}
-        </div>
+        </ul>
     );
 };
 

@@ -1,4 +1,5 @@
-import { configure } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
+// Add additional Jest matchers for RTL
+import '@testing-library/jest-dom/extend-expect';
 
-configure({ adapter: new Adapter() });
+// Polyfill fetch support on Node
+import 'cross-fetch/polyfill';

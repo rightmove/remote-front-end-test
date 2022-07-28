@@ -1,5 +1,6 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
+import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import MultiSelect from '../MultiSelect';
 
 const propertyTypes = [
@@ -17,44 +18,48 @@ const propertyTypes = [
 
 describe('MultiSelect', () => {
     it('should render all  options options and a label', () => {
-        const wrapper = shallow(<MultiSelect options={propertyTypes} label="test label" />);
+        render(<MultiSelect options={propertyTypes} label="test label" />);
 
-        expect(wrapper.find('input')).toHaveLength(propertyTypes.length);
-        wrapper.find('label').map((node, index) => {
-            expect(node.text()).toEqual(propertyTypes[index]);
+        const inputs = screen.getAllByRole('checkbox');
+        expect(inputs).toHaveLength(propertyTypes.length);
+
+        propertyTypes.forEach((propertyType) => {
+            const input = screen.getByLabelText(propertyType);
+            expect(input.value).toBe(propertyType.toLowerCase());
         });
     });
 
-    it('should call the callback when clicking on various option', () => {
-        const onChange = jest.fn();
-        const wrapper = mount(<MultiSelect options={propertyTypes} label="test label" onChange={onChange} />);
+    it('should call the callback when clicking on various option', async () => {
+        const onChange = () => {};
+        const user = userEvent.setup();
+        render(<MultiSelect options={propertyTypes} label="test label" onChange={onChange} />);
 
-        wrapper
-            .find('input')
-            .at(0)
-            .simulate('change', { target: { checked: true, value: propertyTypes[0].toLowerCase() } });
-        expect(onChange).toHaveBeenCalledWith(['flat']);
-        onChange.mockClear();
+        const uncheckedFlatsCheckbox = screen.getByRole('checkbox', { name: 'Flat', checked: false });
+        const uncheckedSemiDetachedCheckbox = screen.getByRole('checkbox', { name: 'Semi-Detached', checked: false });
+        const uncheckedTerracedCheckbox = screen.getByRole('checkbox', { name: 'Terraced', checked: false });
 
-        wrapper
-            .find('input')
-            .at(3)
-            .simulate('change', { target: { checked: true, value: propertyTypes[3].toLowerCase() } });
-        expect(onChange).toHaveBeenCalledWith(['flat', 'semi-detached']);
-        onChange.mockClear();
+        await user.click(uncheckedFlatsCheckbox);
 
-        wrapper
-            .find('input')
-            .at(5)
-            .simulate('change', { target: { checked: true, value: propertyTypes[5].toLowerCase() } });
-        expect(onChange).toHaveBeenCalledWith(['flat', 'semi-detached', 'terraced']);
-        onChange.mockClear();
+        const checkedFlatsCheckbox = screen.getByRole('checkbox', { name: 'Flat', checked: true });
+        expect(checkedFlatsCheckbox).toBeInTheDocument();
+        expect(uncheckedSemiDetachedCheckbox).toBeInTheDocument();
+        expect(uncheckedTerracedCheckbox).toBeInTheDocument();
 
-        wrapper
-            .find('input')
-            .at(3)
-            .simulate('change', { target: { checked: false, value: propertyTypes[3].toLowerCase() } });
-        expect(onChange).toHaveBeenCalledWith(['flat', 'terraced']);
-        onChange.mockClear();
+        await user.click(uncheckedSemiDetachedCheckbox);
+
+        const checkedSemiDetachedCheckbox = screen.getByRole('checkbox', { name: 'Semi-Detached', checked: true });
+        expect(checkedFlatsCheckbox).toBeInTheDocument();
+        expect(checkedSemiDetachedCheckbox).toBeInTheDocument();
+
+        await user.click(uncheckedTerracedCheckbox);
+
+        const checkedTerracedCheckbox = screen.getByRole('checkbox', { name: 'Terraced', checked: true });
+        expect(checkedTerracedCheckbox).toBeInTheDocument();
+
+        await user.click(checkedSemiDetachedCheckbox);
+
+        expect(checkedFlatsCheckbox).toBeInTheDocument();
+        expect(uncheckedSemiDetachedCheckbox).toBeInTheDocument();
+        expect(checkedTerracedCheckbox).toBeInTheDocument();
     });
 });
