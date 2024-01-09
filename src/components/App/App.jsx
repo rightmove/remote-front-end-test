@@ -3,14 +3,17 @@ import './App.scss';
 import Header from '../Header';
 import SortAndFilter from '../SortAndFilter';
 import PropertyListing from '../PropertyListing';
+import { PropertiesProvider } from '../../providers/propertiesProvider';
 
 const App = () => {
     return (
         <div className="App">
             <Header />
             <main>
-                <SortAndFilter />
-                <PropertyListing />
+                <PropertiesProvider>
+                    <SortAndFilter />
+                    <PropertyListing />
+                </PropertiesProvider>
             </main>
         </div>
     );
