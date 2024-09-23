@@ -8,6 +8,6 @@ describe('PropertyListing', () => {
         render(<PropertyListing />);
         const propertiesList = screen.getByRole('list');
         const propertyCards = await within(propertiesList).findAllByRole('listitem');
-        expect(propertyCards).toHaveLength(5);
+        expect(propertyCards).toHaveLength(101);
     });
 });
