@@ -22,3 +22,6 @@ export const bedOptions = [1, 2, 3, 4, 5, 6, 7, 9];
 export const sortOptions = ['price', 'bedrooms'];
 
 export const orderOptions = ['asc', 'desc'];
+
+export const API_BASE_URL = 'http://localhost:3000';
+
