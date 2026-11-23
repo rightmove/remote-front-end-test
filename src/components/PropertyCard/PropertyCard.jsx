@@ -48,6 +48,19 @@ const PropertyCard = ({ price, mainImage, propertyTitle, displayAddress, branchN
     );
 };
 
+ImageAndPrice.propTypes = {
+    price: PropTypes.number,
+    mainImage: PropTypes.string,
+};
+
+PropertyDetails.propTypes = {
+    propertyTitle: PropTypes.string,
+    displayAddress: PropTypes.string,
+    branchName: PropTypes.string,
+    url: PropTypes.string,
+    summary: PropTypes.string,
+};
+
 PropertyCard.propTypes = {
     summary: PropTypes.string,
     displayAddress: PropTypes.string,
