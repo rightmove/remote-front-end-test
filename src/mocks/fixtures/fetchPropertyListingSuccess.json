@@ -24,5 +24,44 @@
         "contactUrl": "/property-for-sale/contactBranch.html?propertyId=59309477",
         "propertyTitle": "2 bedroom flat for sale",
         "mainImage": "https://media.rightmove.co.uk/dir/crop/10:9-16:9/76k/75148/59309477/75148_981263_IMG_17_0000_max_476x317.jpg"
+    },
+    {
+        "id": 3,
+        "bedrooms": 2,
+        "summary": "This well presented and modern two bedroom flat is situated within a superb development, boasting a stunning reception room with doors to a balcony and a fully fitted kitchen.",
+        "displayAddress": "Renaissance, Lewisham, SE13",
+        "propertyType": "Flat",
+        "price": 599950,
+        "branchName": "Foxtons, Blackheath",
+        "propertyUrl": "/property-for-sale/property-59309477.html",
+        "contactUrl": "/property-for-sale/contactBranch.html?propertyId=59309477",
+        "propertyTitle": "2 bedroom flat for sale",
+        "mainImage": "https://media.rightmove.co.uk/dir/crop/10:9-16:9/76k/75148/59309477/75148_981263_IMG_17_0000_max_476x317.jpg"
+    },
+    {
+        "id": 4,
+        "bedrooms": 2,
+        "summary": "This well presented and modern two bedroom flat is situated within a superb development, boasting a stunning reception room with doors to a balcony and a fully fitted kitchen.",
+        "displayAddress": "Renaissance, Lewisham, SE13",
+        "propertyType": "Flat",
+        "price": 599950,
+        "branchName": "Foxtons, Blackheath",
+        "propertyUrl": "/property-for-sale/property-59309477.html",
+        "contactUrl": "/property-for-sale/contactBranch.html?propertyId=59309477",
+        "propertyTitle": "2 bedroom flat for sale",
+        "mainImage": "https://media.rightmove.co.uk/dir/crop/10:9-16:9/76k/75148/59309477/75148_981263_IMG_17_0000_max_476x317.jpg"
+    },
+    {
+        "id": 2,
+        "bedrooms": 2,
+        "summary": "This well presented and modern two bedroom flat is situated within a superb development, boasting a stunning reception room with doors to a balcony and a fully fitted kitchen.",
+        "displayAddress": "Renaissance, Lewisham, SE13",
+        "propertyType": "Flat",
+        "price": 599950,
+        "branchName": "Foxtons, Blackheath",
+        "propertyUrl": "/property-for-sale/property-59309477.html",
+        "contactUrl": "/property-for-sale/contactBranch.html?propertyId=59309477",
+        "propertyTitle": "2 bedroom flat for sale",
+        "mainImage": "https://media.rightmove.co.uk/dir/crop/10:9-16:9/76k/75148/59309477/75148_981263_IMG_17_0000_max_476x317.jpg"
     }
 ]
