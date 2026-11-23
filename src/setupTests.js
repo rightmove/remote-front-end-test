@@ -1,5 +1,8 @@
 // Add additional Jest matchers for RTL
 import '@testing-library/jest-dom';
 
-// Polyfill fetch support on Node
-import 'cross-fetch/polyfill';
+import { server } from './mocks/server';
+
+beforeAll(() => server.listen({ onUnhandledRequest: 'error' }));
+afterEach(() => server.resetHandlers());
+afterAll(() => server.close());
