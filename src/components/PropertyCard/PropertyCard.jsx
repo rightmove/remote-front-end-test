@@ -2,11 +2,11 @@ import React from 'react';
 import './PropertyCard.scss';
 import PropTypes from 'prop-types';
 
-const ImageAndPrice = ({ price, mainImage }) => {
+const ImageAndPrice = ({ price, mainImage, displayAddress }) => {
     return (
         <div className="ImageAndPrice">
             <div className="image">
-                <img src={mainImage} alt="Property" />
+                <img src={mainImage} alt={`Picture of property at ${displayAddress}`} />
             </div>
             <div className="price">£ {price}</div>
         </div>
@@ -36,7 +36,7 @@ const PropertyDetails = ({ propertyTitle, displayAddress, branchName, url, summa
 const PropertyCard = ({ price, mainImage, propertyTitle, displayAddress, branchName, propertyUrl, summary }) => {
     return (
         <div className="PropertyCard">
-            <ImageAndPrice price={price} mainImage={mainImage} />
+            <ImageAndPrice price={price} mainImage={mainImage} displayAddress={displayAddress} />
             <PropertyDetails
                 propertyTitle={propertyTitle}
                 summary={summary}
@@ -51,6 +51,7 @@ const PropertyCard = ({ price, mainImage, propertyTitle, displayAddress, branchN
 ImageAndPrice.propTypes = {
     price: PropTypes.number,
     mainImage: PropTypes.string,
+    displayAddress: PropTypes.string,
 };
 
 PropertyDetails.propTypes = {

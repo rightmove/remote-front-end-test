@@ -14,7 +14,7 @@ describe('PropertyCard', () => {
 
     it('should render property image', () => {
         render(<PropertyCard {...props} />);
-        const image = screen.getByAltText('Property');
+        const image = screen.getByAltText(`Picture of property at ${props.displayAddress}`);
         expect(image.src).toContain('61AG4UpUoPL._SX300_QL70_.jpg');
     });
 
